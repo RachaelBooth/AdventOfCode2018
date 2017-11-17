@@ -1,0 +1,19 @@
+{
+  "name": "advent-of-code-2017",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/solve.js",
+  "scripts": {
+    "build": "tsc",
+    "solve": "tsc && node build/solve.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rachael Booth",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1"
+  }
+}
