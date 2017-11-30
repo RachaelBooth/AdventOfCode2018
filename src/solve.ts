@@ -7,4 +7,11 @@ program
   .option('-p --part [number]')
   .parse(process.argv)
 
-console.log(`Day ${program.day} Part ${program.part}`)
+getAnswer(program.day, program.part);
+
+async function getAnswer(day: number, part: number) {
+    console.log(`Day ${program.day} Part ${program.part}`);
+    const location = `./day${day}/part${part}`;
+    const code = await import(location);
+    console.log(`Answer: ${code.solve()}`);
+}
