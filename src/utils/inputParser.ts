@@ -40,6 +40,10 @@ export default class InputParser {
         return _.map(this.readInputLines(), line => line.split(''));
     }
 
+    public readLinesAsNumbers(): number[] {
+        return _.map(this.readInputLines(), line => _.parseInt(line));
+    }
+
     public readInputLines(): string[] {
         const contents = this.readWholeInput();
         return contents.split(/\r?\n/);
