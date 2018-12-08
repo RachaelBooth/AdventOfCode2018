@@ -13,7 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.11.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2"
   },
   "devDependencies": {
     "@types/node": "^8.0.53",
