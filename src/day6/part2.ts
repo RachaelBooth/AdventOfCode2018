@@ -19,14 +19,15 @@ export function solve() {
 
 function isInRegion(location: coordinates, points: coordinates[]): boolean {
     let distances = _.map(points, p => distance(location, p));
-    return _.max(distances) < maxDistance;
+    return _.sum(distances) < maxDistance;
 }
 
 function getRegionSize(points: coordinates[]): number {
-    let minX = _.max(_.map(points, p => p.X)) - maxDistance;
-    let maxX = _.min(_.map(points, p => p.X)) + maxDistance;
-    let minY = _.max(_.map(points, p => p.Y)) - maxDistance;
-    let maxY = _.min(_.map(points, p => p.Y)) + maxDistance;
+    const potentialBoundSize = Math.ceil(maxDistance/points.length);
+    let minX = _.min(_.map(points, p => p.X)) - potentialBoundSize;
+    let maxX = _.max(_.map(points, p => p.X)) + potentialBoundSize;
+    let minY = _.min(_.map(points, p => p.Y)) - potentialBoundSize;
+    let maxY = _.max(_.map(points, p => p.Y)) + potentialBoundSize;
     let count = 0;
     let x = minX;
     while (x <= maxX) {
